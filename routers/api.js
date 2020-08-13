@@ -15,7 +15,7 @@ router.get("/timestamp/:date_string?", function (req, res) {
   if (!req.params.date_string) {
     date = new Date();
   } else {
-    timestamp = Number(req.params.date_string) === NaN
+    timestamp = isNaN(Number(req.params.date_string))
       ? req.params.date_string
       : Number(req.params.date_string);
     date = new Date(timestamp);
