@@ -31,7 +31,7 @@ const verifySignature = (req, res, next) => {
 
 router.post('/', verifySignature, (req, res) => {
   if (req.headers['x-github-event'] == 'push') {
-    cmd.get('bash ../scripts/git.sh', (err, data) => {
+    cmd.get('bash ./scripts/git.sh', (err, data) => {
       if (err) return console.log(err);
       console.log(data);
       cmd.run('refresh');
