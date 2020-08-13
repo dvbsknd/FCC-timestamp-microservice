@@ -19,10 +19,9 @@ app.get("/", function (req, res) {
 const gitWebhook = require('./routers/git.js');
 app.use('/git', gitWebhook);
 
-// your first API endpoint... 
-app.get("/api/hello", function (req, res) {
-  res.json({greeting: 'hello API'});
-});
+// Main API endpoint
+const api = require('./routers/api.js');
+app.use('/api', api);
 
 // listen for requests :)
 var listener = app.listen(process.env.PORT, function () {
