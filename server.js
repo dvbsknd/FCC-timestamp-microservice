@@ -1,7 +1,4 @@
-// server.js
-// where your node app starts
-
-// init project
+// Init project
 var express = require('express');
 var app = express();
 
